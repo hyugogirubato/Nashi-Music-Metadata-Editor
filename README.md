@@ -28,7 +28,7 @@ Python 3.7: https://www.python.org/downloads/release/python-375/
 The program is compatible and can be made executable with [Auto-py-to-exe](https://pypi.org/project/auto-py-to-exe/).
 
 ## Note
- - The initial track will not be deleted, and the final track will be saved as:  
+The initial track will not be deleted, and the final track will be saved as:  
 Music\artist_name\album_name\track_number - track_name
 
 
