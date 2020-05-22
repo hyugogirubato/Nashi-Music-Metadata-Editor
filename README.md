@@ -32,7 +32,6 @@ The initial track will not be deleted, and the final track will be saved as:
 *Music\artist_name\album_name\track_number - track_name*  
 
 -----------------
-
 *This program was created by the __Nashi Team__.  
 Find us on [discord](https://discord.com/invite/g6JzYbh) for more information on projects in development.*
 
