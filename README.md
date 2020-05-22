@@ -29,7 +29,7 @@ The program is compatible and can be made executable with [Auto-py-to-exe](https
 
 ## Note
 The initial track will not be deleted, and the final track will be saved as:  
-Music\artist_name\album_name\track_number - track_name  
+*Music\artist_name\album_name\track_number - track_name*  
 
 -----------------
 
