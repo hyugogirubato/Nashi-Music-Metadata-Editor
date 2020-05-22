@@ -24,7 +24,7 @@ Python 3.7: https://www.python.org/downloads/release/python-375/
 2) Copy the path to the location of the .mp3 file
 3) Recover the file sort in the right folder
 
-# Compilation for windows
+# Compilation for Windows
 The program is compatible and can be made executable with Auto-py-to-exe.
 Auto-py-to-exe: https://pypi.org/project/auto-py-to-exe/
 
