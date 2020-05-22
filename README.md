@@ -1,16 +1,33 @@
-# metadata-editor
-Edit the metadata of your music with ease!
+# Nashi Music Metata Editor
+When you download music from the internet, no metadata is saved, with this program, edit all the metedata of your music simply.
+Save your .mp3 file in "artist - track" form and enter the location of the file to be edited, the program loads this for you to search on Apple Music for the metadata needed as well as the illustration in 3000x3000px.
 
-Prerequisite:
- - FFmpeg (put it in the same directory for windows)
- - Google Chrome
- - ChromeDriver linked to your OS (to place in the same directory)
-   Download:  https://chromedriver.chromium.org/
+# Prerequisite
+ - FFmpeg
+ - Google Chrome 
+ - ChromeDriver (same version as the Google Chrome installer version)
+ - Python 3.7
+ 
+# Download the prerequisites
+FFmpeg: https://www.ffmpeg.org/download.html
+Google Chrome: https://www.google.com/intl/fr/chrome/?standalone=1
+ChromeDriver:  https://chromedriver.chromium.org/
+Python 3.7: https://www.python.org/downloads/release/python-375/
 
-Instructions:
+# Installation
+1) Install the different pip requirements with the setup.py file
+2) Place in the same place as the program: ffmpeg and ChromeDriver
+3) Use the program
+
+# Use
 1) Check that your .mp3 file is named as: artist - track
 2) Copy the path to the location of the .mp3 file
+3) Recover the file sort in the right folder
 
-Completed!
-The initial track will not be deleted, and the final track will be saved as:
+# Compilation for windows
+The program is compatible and can be made executable with Auto-py-to-exe.
+Auto-py-to-exe: https://pypi.org/project/auto-py-to-exe/
+
+# Note
+ - The initial track will not be deleted, and the final track will be saved as:
 Music\artist_name\album_name\track_number - track_name
