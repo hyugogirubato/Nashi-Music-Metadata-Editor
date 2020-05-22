@@ -27,6 +27,28 @@ import shutil
 # l_tracks_name
 # l_track_artist
 
+# ERROR Code
+# error 1 : get_internet_status
+# error 2 : get_file_status
+# error 3 : get_file_name
+# error 4 : get_file_artist_name
+# error 5 : get_file_track_name
+# error 6 : get_web_page
+# error 7 : get_track_link
+# error 8 : get_track_link
+# error 9 : get_track_web_page
+# error 10 : get_track_number
+# error 11 : get_tracks_name
+# error 12 : get_track_position
+# error 13 : get_track_name
+# error 14 : get_album_artist
+# error 15 : get_cover_link
+# error 16 : get_album_genre
+# error 17 : get_album_name
+# error 18 : get_album_release_date
+# error 19 : get_album_copyright
+# error 20 : get_cover
+
 
 def get_internet_status():
     try:
@@ -36,8 +58,18 @@ def get_internet_status():
     except OSError:
         internet_status = colored("False", 'red')
         print("[debug] Internet connection: [{}]".format(internet_status))
-        error_text = colored("ERROR: internet connection is required.", 'red')
+        error_text = colored("ERROR 1: internet connection is required.", 'red')
         print(error_text + "\n ")
+        os.system('pause')
+        sys.exit()
+
+
+def get_file_status(file_path):
+    if not os.path.exists(file_path):
+        error_text = colored("ERROR 2: unable to find file.", 'red')
+        tips_error = colored("Try to remove the quotes from the path.", 'yellow')
+        print(error_text)
+        print(tips_error + "\n ")
         os.system('pause')
         sys.exit()
 
@@ -54,7 +86,7 @@ def get_file_name(file_name):
             sys.exit()
         return file_name
     except:
-        error_text = colored("ERROR: the requested file cannot be found or is incompatible.", 'red')
+        error_text = colored("ERROR 3: the requested file cannot be found or is incompatible.", 'red')
         print(error_text + "\n ")
         os.system('pause')
         sys.exit()
@@ -68,7 +100,7 @@ def get_file_artist_name(file_name):
             sys.exit()
         return file_artist_name
     except:
-        error_text = colored("ERROR: the file name is incompatible. Respect the writing: artist - track name", 'red')
+        error_text = colored("ERROR 4: the file name is incompatible. Respect the writing: artist - track name", 'red')
         print(error_text + "\n ")
         os.system('pause')
         sys.exit()
@@ -82,7 +114,7 @@ def get_file_track_name(file_name):
             sys.exit()
         return file_track_name
     except:
-        error_text = colored("ERROR: the file name is incompatible. Respect the writing: artist - track name", 'red')
+        error_text = colored("ERROR 5 : the file name is incompatible. Respect the writing: artist - track name", 'red')
         print(error_text + "\n ")
         os.system('pause')
         sys.exit()
@@ -118,8 +150,10 @@ def get_web_page(file_artist_name, file_track_name):
             sys.exit()
         return web_page
     except:
-        error_text = colored("ERROR: a problem occurred while retrieving the web page.", 'red')
-        print(error_text + "\n ")
+        error_text = colored("ERROR 6 : a problem occurred while retrieving the web page.", 'red')
+        tips_error = colored("Check that the chromedriver version corresponds to the google chrome version.", 'yellow')
+        print(error_text)
+        print(tips_error + "\n ")
         os.system('pause')
         sys.exit()
 
@@ -139,7 +173,7 @@ def get_track_link(web_page, file_name):
 
         # track list data
         if "No results for" in web_page:
-            print("ERROR: no result found. Check the name of the title or the artist")
+            print("ERROR 7 : no result found. Check the name of the title or the artist.")
             sys.exit()
         tracks_name = BeautifulSoup(web_page, "html.parser")
         tracks_name = tracks_name.findAll("div", attrs={"class": u"list-lockup typography-label song linkable search-swoosh ember-view"})
@@ -185,7 +219,7 @@ def get_track_link(web_page, file_name):
         #     track_link = track_link.replace('/us/', '/fr/')
         return track_link
     except:
-        error_text = colored("ERROR: internet connection too slow. Try Again.", 'yellow')
+        error_text = colored("ERROR 8 : internet connection too slow. Try Again.", 'yellow')
         print(error_text + "\n ")
         os.system('pause')
         sys.exit()
@@ -197,7 +231,7 @@ def get_track_web_page(track_link):
         track_web_page = BeautifulSoup(track_web_page.text, "html.parser")
         return track_web_page
     except:
-        error_text = colored("ERROR: an error has occurred", 'red')
+        error_text = colored("ERROR 9 : an error has occurred.", 'red')
         print(error_text + "\n ")
         os.system('pause')
         sys.exit()
@@ -209,7 +243,7 @@ def get_track_number(track_web_page):
         track_number = len(track_number)
         return track_number
     except:
-        error_text = colored("ERROR: an error has occurred", 'red')
+        error_text = colored("ERROR 10 : an error has occurred.", 'red')
         print(error_text + "\n ")
         os.system('pause')
         sys.exit()
@@ -223,7 +257,7 @@ def get_tracks_name(track_web_page):
             tracks_name.append(str(x.get_text()).strip().lower())
         return tracks_name
     except:
-        error_text = colored("ERROR: an error has occurred", 'red')
+        error_text = colored("ERROR 11 : an error has occurred.", 'red')
         print(error_text + "\n ")
         os.system('pause')
         sys.exit()
@@ -269,7 +303,7 @@ def get_track_position(track_list_data, file_track_name):
             track_position = results_list.index(selected_track)
         return track_position
     except:
-        error_text = colored("ERROR: an error has occurred", 'red')
+        error_text = colored("ERROR 12 : an error has occurred.", 'red')
         print(error_text + "\n ")
         os.system('pause')
         sys.exit()
@@ -283,7 +317,7 @@ def get_track_name(track_web_page, track_position):
         track_name = track_name[0]
         return track_name
     except:
-        error_text = colored("ERROR: an error has occurred", 'red')
+        error_text = colored("ERROR 13 : an error has occurred.", 'red')
         print(error_text + "\n ")
         os.system('pause')
         sys.exit()
@@ -295,7 +329,7 @@ def get_album_artist(track_web_page):
         album_artist = search_result.get_text().strip()
         return album_artist
     except:
-        error_text = colored("ERROR: an error has occurred", 'red')
+        error_text = colored("ERROR 14 : an error has occurred.", 'red')
         print(error_text + "\n ")
         os.system('pause')
         sys.exit()
@@ -321,7 +355,7 @@ def get_cover_link(track_web_page):
         cover_link = cover_link.replace('270x270', '3000x3000')
         return cover_link
     except:
-        error_text = colored("ERROR: an error has occurred", 'red')
+        error_text = colored("ERROR 15 : an error has occurred.", 'red')
         print(error_text + "\n ")
         os.system('pause')
         sys.exit()
@@ -333,7 +367,7 @@ def get_album_genre(track_web_page):
         album_genre = search_result.get_text().split("·")[0].strip()
         return album_genre
     except:
-        error_text = colored("ERROR: an error has occurred", 'red')
+        error_text = colored("ERROR 16 : an error has occurred.", 'red')
         print(error_text + "\n ")
         os.system('pause')
         sys.exit()
@@ -345,7 +379,7 @@ def get_album_name(track_web_page):
         album_name = search_result.get_text().strip()
         return album_name
     except:
-        error_text = colored("ERROR: an error has occurred", 'red')
+        error_text = colored("ERROR 17 : an error has occurred.", 'red')
         print(error_text + "\n ")
         os.system('pause')
         sys.exit()
@@ -357,7 +391,7 @@ def get_album_release_date(track_web_page):
         album_release_date = search_result.get_text().split("·")[1].strip()
         return album_release_date
     except:
-        error_text = colored("ERROR: an error has occurred", 'red')
+        error_text = colored("ERROR 18 : an error has occurred.", 'red')
         print(error_text + "\n ")
         os.system('pause')
         sys.exit()
@@ -369,7 +403,7 @@ def get_album_copyright(track_web_page):
         album_copyright = search_result.get_text().strip()
         return album_copyright
     except:
-        error_text = colored("ERROR: an error has occurred", 'red')
+        error_text = colored("ERROR 19 : an error has occurred.", 'red')
         print(error_text + "\n ")
         os.system('pause')
         sys.exit()
@@ -392,7 +426,7 @@ def get_cover(cover_link):
         if total_size != 0 and t.n != total_size:
             sys.exit()
     except:
-        error_text = colored("ERROR: an error occurred while downloading", 'red')
+        error_text = colored("ERROR 20 : an error occurred while downloading.", 'red')
         print(error_text + "\n ")
         os.system('pause')
         sys.exit()
@@ -400,10 +434,11 @@ def get_cover(cover_link):
 
 # [PROGRAM]
 get_internet_status()
-# print("[debug] Paste the file link or drag it into the window")
-# file_path = input("[debug] File path : ")
-# print("[debug] File path: [{}]".format(file_path))
-l_file_path = "D:\Hugo GUILBERT\Wondershare UniConverter\Downloaded\Panda Eyes - Nostalgia 64.mp3"
+# l_file_path = "D:\Hugo GUILBERT\Wondershare UniConverter\Downloaded\Panda Eyes - Nostalgia 64.mp3"
+print("[debug] Paste the file link or drag it into the window")
+l_file_path = input("[debug] File path : ")
+get_file_status(l_file_path)
+print("[debug] File path: [{}]".format(l_file_path))
 
 # file name recovery
 l_file_name = get_file_name(l_file_path)
