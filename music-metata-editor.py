@@ -13,7 +13,6 @@ from tqdm import tqdm
 import requests
 import shutil
 
-
 # [All Information Recover]
 # l_file_path
 # l_file_name
