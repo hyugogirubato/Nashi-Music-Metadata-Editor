@@ -25,8 +25,7 @@ Python 3.7: https://www.python.org/downloads/release/python-375/
 3) Recover the file sort in the right folder
 
 # Compilation for Windows
-The program is compatible and can be made executable with Auto-py-to-exe.
-Auto-py-to-exe: https://pypi.org/project/auto-py-to-exe/
+The program is compatible and can be made executable with Auto-py-to-exe (https://pypi.org/project/auto-py-to-exe/).
 
 # Note
  - The initial track will not be deleted, and the final track will be saved as:
