@@ -16,7 +16,7 @@ Python 3.7: https://www.python.org/downloads/release/python-375/
 
 # Installation
 1) Install the different pip requirements with the setup.py file
-2) Place in the same place as the program: ffmpeg and ChromeDriver
+2) Place in the same place as the program: FFmpeg and ChromeDriver
 3) Use the program
 
 # Use
