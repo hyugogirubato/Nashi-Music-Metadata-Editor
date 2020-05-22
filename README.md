@@ -7,3 +7,9 @@ Prerequisite:
  - ChromeDriver linked to your OS (to place in the same directory)
    Download:  https://chromedriver.chromium.org/
 
+Instructions:
+1) Check that your .mp3 file is named as: artist - track
+2) Copy the path to the location of the .mp3 file
+
+Completed! the initial track will not be deleted, and the final track will be saved as:
+Music\artist_name\album_name\track_number - track_name
