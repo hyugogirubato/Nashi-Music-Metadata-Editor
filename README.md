@@ -33,6 +33,5 @@ Music\artist_name\album_name\track_number - track_name
 
 -----------------
 
-*This program was created by the* __Nashi Team__ 
-*Find us on [discord](https://discord.com/invite/g6JzYbh) for more information on projects in development.*
+*This program was created by the __Nashi Team__. Find us on [discord](https://discord.com/invite/g6JzYbh) for more information on projects in development.*
 
