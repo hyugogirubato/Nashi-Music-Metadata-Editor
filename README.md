@@ -33,5 +33,5 @@ Music\artist_name\album_name\track_number - track_name
 
 -----------------
 
-fff
+*This program was created by the _Nashi_ team. Find us on [discord](google.com) for more information on projects in development*
 
